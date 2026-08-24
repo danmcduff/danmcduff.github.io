@@ -1,0 +1,275 @@
+:root {
+  --ink: #202020;
+  --muted: #666;
+  --light: #f3f3f3;
+  --line: #ddd;
+  --link: #1f5d8c;
+  --link-hover: #9a4d17;
+  --paper: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: min(1060px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: 22px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--ink);
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 0.94rem;
+}
+
+nav a {
+  color: #444;
+}
+
+.page-shell {
+  width: min(1060px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+.site-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 720px) 250px;
+  gap: 70px;
+  align-items: start;
+  padding: 34px 0 58px;
+}
+
+.content-column {
+  min-width: 0;
+}
+
+.intro {
+  max-width: 700px;
+  padding-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(2.2rem, 4.2vw, 3.15rem);
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 1.55rem;
+}
+
+.lead {
+  margin: 20px 0 14px;
+  color: #333;
+  font-size: 1.17rem;
+  line-height: 1.45;
+}
+
+.intro p:not(.lead):not(.eyebrow) {
+  margin: 0;
+  color: #444;
+  font-size: 1.02rem;
+}
+
+.publications {
+  padding-top: 8px;
+}
+
+.publication-head {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 18px 0 12px;
+  border-top: 1px solid var(--line);
+}
+
+.publication-head .eyebrow {
+  margin-bottom: 4px;
+}
+
+.publication-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.publication-list li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 16px;
+  padding: 17px 0 18px;
+  border-top: 1px solid var(--line);
+}
+
+.year {
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.publication-list a {
+  color: var(--link);
+  font-size: 1.03rem;
+  font-weight: 700;
+  line-height: 1.32;
+}
+
+.publication-list p {
+  margin: 4px 0 0;
+  color: #555;
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.sidebar {
+  position: sticky;
+  top: 24px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.sidebar img {
+  display: block;
+  width: 100%;
+  margin-bottom: 17px;
+  border-radius: 2px;
+}
+
+.sidebar p {
+  margin: 0 0 14px;
+}
+
+.role {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.side-section {
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+
+.side-section h2 {
+  margin-bottom: 8px;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.side-section a {
+  display: block;
+  margin: 6px 0;
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    justify-content: flex-start;
+  }
+
+  .site-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sidebar {
+    position: static;
+    max-width: 360px;
+  }
+
+  .sidebar img {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 15px;
+  }
+
+  .site-header,
+  .page-shell {
+    width: min(100% - 28px, 1060px);
+  }
+
+  nav {
+    overflow-x: auto;
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .site-layout {
+    padding-top: 28px;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 11vw, 3rem);
+  }
+
+  .publication-list li {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
