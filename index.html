@@ -1,222 +1,198 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel McDuff - AI Researcher</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* A very light gray background */
-        }
-        .section-title {
-            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
-        }
-        .nav-link {
-            @apply text-gray-600 hover:text-blue-600 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium;
-        }
-        .active-link {
-            @apply text-blue-600 bg-blue-50 rounded-md;
-        }
-        /* Home section specific styles for background image */
-        #home {
-            background-image: url('Backdrop.png'); /* Placeholder image, replace with a relevant one */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            color: white; /* Ensure text is readable on the background */
-        }
-       #home::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(60, 60, 60, 0.7); /* Darker gray overlay for more "grayed out" effect */
-            z-index: 1;
-        }
-        #home > .container {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
-</head>
-<body class="text-gray-700">
-
-    <!-- Header & Navigation -->
-    <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-gray-800">Daniel McDuff</a>
-            <div class="hidden md:flex space-x-4" id="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#research" class="nav-link">Research</a>
-                <a href="#publications" class="nav-link">Publications</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block nav-link text-center">About</a>
-            <a href="#research" class="block nav-link text-center">Research</a>
-            <a href="#publications" class="block nav-link text-center">Publications</a>
-            <a href="#contact" class="block nav-link text-center">Contact</a>
-        </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daniel McDuff | AI Research</title>
+    <meta
+      name="description"
+      content="Academic researcher website for Daniel McDuff, focused on AI for health, affective computing, computer vision, and wearable sensing."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav aria-label="Primary navigation">
+        <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <main>
-        <!-- Hero Section --><section id="home" class="py-20 md:py-32">
-            <div class="container mx-auto px-6 text-center">
-                <div class="flex flex-col md:flex-row items-center justify-center gap-12 text-white">
-                    <img src="Daniel_McDuff_Headshot3-452x452.jpg" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/200x200/E2E8F0/4A5568?text=Daniel+McDuff';"
-                         alt="Daniel McDuff" class="w-48 h-48 rounded-full shadow-lg object-cover border-4 border-white">
-                    <div class="text-left max-w-2xl">
-                        <h1 class="text-4xl md:text-5xl font-bold">Daniel McDuff</h1>
-                        <p class="mt-4 text-lg md:text-xl text-blue-300">AI Researcher, Google</p>
-                        <p class="mt-2 text-md text-gray-200">Specializing in Affective Computing, Computer Vision, and Machine Learning for understanding human behavior at scale.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+    <main id="top" class="page-shell">
+      <div class="site-layout">
+        <article class="content-column">
+          <section class="intro" aria-labelledby="page-title">
+            <p class="eyebrow">AI Researcher</p>
+            <h1 id="page-title">Daniel McDuff</h1>
+            <p class="lead">
+              I build machine learning systems that sense, model, and synthesize human behavior,
+              with an emphasis on health, physiology, affective computing, and responsible deployment.
+            </p>
+            <p>
+              My research spans camera-based physiological measurement, multimodal affect recognition,
+              wearable foundation models, and health agents that transform longitudinal sensor data into
+              useful personal and clinical insight.
+            </p>
+          </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-white">
-            <div class="container mx-auto px-6 max-w-4xl">
-                <h2 class="section-title"></h2>
-                <div class="text-lg space-y-4 text-gray-600 leading-relaxed">
-                    <p>
-                        I am an AI researcher at Google, where my work focuses on developing scalable, multimodal machine learning models to understand and interpret human behavior. My primary research interests lie at the intersection of scalable multi-modal AI, health, and affective computing.
-                    </p>
-                    <p>
-                        My goal is to build technology that can perceive and respond to human affective and physiological states in a way that is robust, fair, and beneficial. This includes developing novel camera-based methods for physiological measurement (e.g., heart rate, respiration) and creating models that can analyze facial expressions, vocal prosody, and language to build a more holistic understanding of human experience.
-                    </p>
-                     <p>
-                        Before joining Google, I was a researcher at Microsoft Research and received my Ph.D. from the MIT Media Lab. My work has been published in leading academic venues and has been featured in popular press outlets.
-                    </p>
-                </div>
+          <section id="publications" class="publications" aria-labelledby="publication-title">
+            <div class="publication-head">
+              <div>
+                <p class="eyebrow">Selected Publications</p>
+                <h2 id="publication-title">Publications</h2>
+              </div>
             </div>
-        </section>
 
-        <!-- Publications Section -->
-        <section id="publications" class="py-20 bg-white">
-            <div class="container mx-auto px-6 max-w-4xl">
-                <h2 class="section-title">Selected Publications</h2>
-                <div class="space-y-8">
-                    <!-- Publication Item 1 -->
-                    <div class="p-4 rounded-lg border border-gray-200">
-                        <h3 class="text-lg font-semibold text-blue-700">Scaling Wearable Foundation Models.</h3>
-                        <p class="text-sm text-gray-500 italic">Narayanswamy, Girish, et al. - ICLR (2025).</p>
-                        <a href="#" class="text-blue-600 hover:underline text-sm mt-1 inline-block">PDF</a>
-                    </div>
-                    <!-- Publication Item 2 -->
-                    <div class="p-4 rounded-lg border border-gray-200">
-                        <h3 class="text-lg font-semibold text-blue-700">LSM-2: Learning from Incomplete Wearable Sensor Data.</h3>
-                        <p class="text-sm text-gray-500 italic">Xu, Maxwell A., et al. - arXiv preprint (2025).</p>
-                        <a href="#" class="text-blue-600 hover:underline text-sm mt-1 inline-block">PDF</a>
-                    </div>
-                    <!-- Publication Item 3 -->
-                    <div class="p-4 rounded-lg border border-gray-200">
-                        <h3 class="text-lg font-semibold text-blue-700">The Anatomy of a Personal Health Agent.</h3>
-                        <p class="text-sm text-gray-500 italic">Heydari, A. Ali, et al. - arXiv preprint (2025).</p>
-                        <a href="#" class="text-blue-600 hover:underline text-sm mt-1 inline-block">PDF</a>
-                    </div>
-                    <!-- Publication Item 4 -->
-                    <div class="p-4 rounded-lg border border-gray-200">
-                        <h3 class="text-lg font-semibold text-blue-700">Towards accurate differential diagnosis with large language models.</h3>
-                        <p class="text-sm text-gray-500 italic">McDuff, Daniel, et al. - Nature (2025).</p>
-                        <a href="#" class="text-blue-600 hover:underline text-sm mt-1 inline-block">PDF</a>
-                    </div>
-                    <!-- Publication Item 5 -->
-                    <div class="p-4 rounded-lg border border-gray-200">
-                        <h3 class="text-lg font-semibold text-blue-700">Mdagents: An adaptive collaboration of llms for medical decision-making.</h3>
-                        <p class="text-sm text-gray-500 italic">Kim, Yubin, et al. - NeurIPS (2024).</p>
-                        <a href="#" class="text-blue-600 hover:underline text-sm mt-1 inline-block">PDF</a>
-                    </div>
+            <ol class="publication-list">
+              <li data-topic="health wearables">
+                <span class="year">2026</span>
+                <div>
+                  <a href="https://arxiv.org/abs/2607.02770">Gemma 4 Technical Report</a>
+                  <p>Gemma Team, Sherif El Abd, Vaibhav Aggarwal, Robin Algayres, et al., Daniel McDuff. <strong>Technical report</strong>.</p>
                 </div>
-            </div>
-        </section>
+              </li>
+              <li data-topic="vision health">
+                <span class="year">2026</span>
+                <div>
+                  <a href="https://www.nature.com/articles/s41586-026-10507-6">Passive heart-rate monitoring during smartphone use in everyday life</a>
+                  <p>Shun Liao, Paolo Di Achille, Jiang Wu, Silviu Borac, et al., Daniel McDuff. <strong>Nature</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="health wearables">
+                <span class="year">2026</span>
+                <div>
+                  <a href="https://www.nature.com/articles/s41586-026-10179-2">Insulin resistance prediction from wearables and routine blood biomarkers</a>
+                  <p>Ahmed A. Metwally, A. Ali Heydari, Daniel McDuff, Alexandru Solot, et al. <strong>Nature</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="health wearables">
+                <span class="year">2026</span>
+                <div>
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/41526380/">Transforming wearable data into personal health insights using large language model agents</a>
+                  <p>Mike A. Merrill, Akshay Paruchuri, Naghmeh Rezaei, et al., Daniel McDuff, Xin Liu. <strong>Nature Communications</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="health">
+                <span class="year">2026</span>
+                <div>
+                  <a href="https://researchr.org/alias/daniel-mcduff">A scalable framework for evaluating health language models</a>
+                  <p>Neil Mallinar, A. Ali Heydari, Xin Liu, et al., Daniel McDuff, Ahmed A. Metwally. <strong>npj Digital Medicine</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="health">
+                <span class="year">2025</span>
+                <div>
+                  <a href="https://www.nature.com/articles/s41586-025-08869-4">Towards accurate differential diagnosis with large language models</a>
+                  <p>Daniel McDuff, Mike Schaekermann, Tao Tu, Anil Palepu, et al. <strong>Nature</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="wearables health">
+                <span class="year">2025</span>
+                <div>
+                  <a href="https://research.google/blog/scaling-wearable-foundation-models/">Scaling Wearable Foundation Models</a>
+                  <p>Girish Narayanswamy, Xin Liu, Kumar Ayush, Yuzhe Yang, et al., Daniel McDuff. <strong>ICLR</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="wearables health">
+                <span class="year">2025</span>
+                <div>
+                  <a href="https://arxiv.org/abs/2506.09108">SensorLM: Learning the Language of Wearable Sensors</a>
+                  <p>Yuwei Zhang, Kumar Ayush, Siyuan Qiao, A. Ali Heydari, et al., Daniel McDuff, Yuzhe Yang. <strong>NeurIPS</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="health">
+                <span class="year">2025</span>
+                <div>
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/41082655/">Smartphone use in a large US adult population: Temporal associations between objective measures of usage and mental well-being</a>
+                  <p>Ari Winbush, Daniel McDuff, John Hernandez, Andrew Barakat, et al. <strong>PNAS</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="health">
+                <span class="year">2025</span>
+                <div>
+                  <a href="https://arxiv.org/abs/2507.06261">Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities</a>
+                  <p>Google Gemini Team. <strong>Technical report</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="vision health">
+                <span class="year">2025</span>
+                <div>
+                  <a href="https://arxiv.org/abs/2506.09718">Non-Contact Health Monitoring During Daily Personal Care Routines</a>
+                  <p>Xulin Ma, Jiankai Tang, Zhang Jiang, et al., Daniel McDuff. Computer vision for remote physiological sensing.</p>
+                </div>
+              </li>
+              <li data-topic="wearables health">
+                <span class="year">2020</span>
+                <div>
+                  <a href="https://www.microsoft.com/en-us/research/?p=697354">Multi-Task Temporal Shift Attention Networks for On-Device Contactless Vitals Measurement</a>
+                  <p>Xin Liu, Josh Fromm, Shwetak N. Patel, Daniel McDuff. <strong>NeurIPS</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="vision health">
+                <span class="year">2018</span>
+                <div>
+                  <a href="https://researchr.org/alias/daniel-mcduff">DeepPhys: Video-Based Physiological Measurement Using Convolutional Attention Networks</a>
+                  <p>Weixuan Chen, Daniel McDuff. <strong>ECCV</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="vision health">
+                <span class="year">2016</span>
+                <div>
+                  <a href="https://dblp.org/rec/conf/chi/McDuffHGP16">COGCAM: Contact-free Measurement of Cognitive Stress During Computer Tasks with a Digital Camera</a>
+                  <p>Daniel J. McDuff, Javier Hernandez, Sarah Gontarek, Rosalind W. Picard. <strong>CHI</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="affect vision">
+                <span class="year">2015</span>
+                <div>
+                  <a href="https://doi.org/10.1109/TAFFC.2014.2384198">Predicting Ad Liking and Purchase Intent: Large-Scale Analysis of Facial Responses to Ads</a>
+                  <p>Daniel McDuff, Rana el Kaliouby, Jeffrey F. Cohn, Rosalind W. Picard. <strong>IEEE Transactions on Affective Computing</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="affect vision">
+                <span class="year">2013</span>
+                <div>
+                  <a href="https://openaccess.thecvf.com/content_cvpr_workshops_2013/W16/html/McDuff_Affectiva-MIT_Facial_Expression_2013_CVPR_paper.html">Affectiva-MIT Facial Expression Dataset (AM-FED): Naturalistic and Spontaneous Facial Expressions Collected In-the-Wild</a>
+                  <p>Daniel McDuff, Rana el Kaliouby, Thibaud Senechal, May Amr, Jeffrey F. Cohn, Rosalind Picard. <strong>CVPR Workshops</strong>.</p>
+                </div>
+              </li>
+              <li data-topic="vision health">
+                <span class="year">2011</span>
+                <div>
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/20952328/">Advancements in Noncontact, Multiparameter Physiological Measurements Using a Webcam</a>
+                  <p>Ming-Zher Poh, Daniel J. McDuff, Rosalind W. Picard. <strong>IEEE Transactions on Biomedical Engineering</strong>.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+        </article>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20">
-            <div class="container mx-auto px-6 text-center max-w-2xl">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="text-lg mb-8 text-gray-600">
-                    I'm always open to discussing research collaborations and new ideas. Feel free to reach out via email or connect with me on professional networks.
-                </p>
-                <div class="flex justify-center space-x-6">
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                        <span class="sr-only">Email</span>
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                       <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.286 2.863 7.92 6.707 9.185.122.02.247.031.37.031.264 0 .52-.054.757-.164.244-.113.46-.28.63-.493.17-.21.287-.457.336-.72h.002c.05-.26.046-.527-.012-.784a.972.972 0 00-.16-.48c-.09-.15-.207-.28-.344-.39-.138-.11-.29-.19-.45-.25-.164-.06-.33-.09-.5-.09-.25 0-.49.06-.71.18-.22.12-.41.29-.56.5-.15.21-.25.45-.29.72h-.002c-.05.26-.05.52.01.77.06.25.17.48.33.68.16.2.36.36.59.47.23.11.48.17.74.17.22 0 .43-.04.64-.12.21-.08.4-.2.56-.35.16-.16.3-.34.39-.56.09-.21.14-.45.14-.69v-.002c0-.26-.05-.52-.14-.76a1.53 1.53 0 00-.4-.62c-.2-.2-.44-.35-.7-.45-.26-.1-.54-.15-.82-.15s-.56.05-.82.15c-.26.1-.5.25-.7.45-.2.2-.35.42-.45.67-.1.25-.15.51-.15.78v.002c0 .21.03.41.09.61.06.2.15.38.27.54.12.16.26.3.43.41.17.11.36.19.56.24.2.05.4.08.61.08.28 0 .56-.05.82-.14.26-.09.5-.23.7-.4.2-.17.36-.38.48-.62.12-.24.18-.5.18-.78s-.06-.54-.18-.78a2.15 2.15 0 00-.48-.62 2.72 2.72 0 00-.7-.4c-.26-.09-.54-.14-.82-.14s-.56.05-.82.14a2.72 2.72 0 00-.7.4c-.2.17-.37.38-.48.62-.12.24-.18.5-.18.78s.06.54.18.78c.11.24.28.45.48.62.2.17.44.31.7.4.26.09.54.14.82.14.34 0 .67-.06 1-.18.32-.12.6-.3.83-.54.23-.24.4-.53.52-.85.11-.33.17-.67.17-1.02 0-1.06-.42-2.02-1.17-2.73S13.06 6 12 6s-2.02.42-2.73 1.17S8.1 9.94 8.1 11c0 .35.06.69.17 1.02.12.32.3.61.52.85.23.24.51.42.83.54.33.12.66.18 1 .18.28 0 .56-.05.82-.14a2.72 2.72 0 00.7-.4c.2-.17.37-.38.48-.62.12-.24.18-.5.18-.78v-.002c0-.27-.05-.53-.15-.78a1.76 1.76 0 00-.45-.67c-.2-.2-.44-.35-.7-.45-.26-.1-.54-.15-.82-.15s-.56.05-.82.15c-.26.1-.5.25-.7.45-.2.2-.35.42-.4.67-.1.25-.15.51-.15.78v.002c0 .26.05.52.14.76.09.24.23.46.4.62.17.16.37.3.59.4.22.1.46.15.71.15.34 0 .67-.06 1-.18.32-.12.6-.3.83-.54s.4-.53.52-.85c.11-.33.17-.67.17-1.02 0-1.06-.42-2.02-1.17-2.73C14.02 2.42 13.06 2 12 2z" clip-rule="evenodd"></path></svg>
-                        <span class="sr-only">Google Scholar</span>
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-                        <span class="sr-only">LinkedIn</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <aside class="sidebar" aria-label="Daniel McDuff profile summary">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5c2a6d5c45776e85d1482a7e/1546361286622-CYAKY3K0PMG1OXF859CN/Daniel_McDuff_Headshot2.jpg"
+            alt="Portrait of Daniel McDuff"
+          >
+          <p class="role">Senior Staff Research Scientist<br>Google Research</p>
+          <p>Previously Microsoft Research, Affectiva, and MIT Media Lab.</p>
+          <p>Ph.D., MIT<br>B.A. and M.Eng., University of Cambridge</p>
+
+          <section id="contact" class="side-section">
+            <h2>Profiles</h2>
+            <a href="https://scholar.google.com/citations?user=m7Jr-b4AAAAJ&amp;hl=en">Google Scholar</a>
+            <a href="https://dblp.org/pid/63/9606.html">DBLP</a>
+            <a href="https://www.media.mit.edu/people/djmcduff/publications/">MIT Media Lab</a>
+            <a href="https://www.linkedin.com/in/daniel-mcduff-19968051/">LinkedIn</a>
+            <a href="https://twitter.com/danmcduff">X / Twitter</a>
+          </section>
+
+          <section id="talks" class="side-section">
+            <h2>Talks & Writing</h2>
+            <a href="https://spectrum.ieee.org/building-an-ai-that-feels">Building an AI That Feels</a>
+            <a href="https://www.microsoft.com/en-us/research/podcast/when-psychology-meets-technology-with-dr-daniel-mcduff/">When Psychology Meets Technology</a>
+          </section>
+        </aside>
+      </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; <span id="current-year"></span> Daniel McDuff. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Active navigation link highlighting on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('#nav-menu a');
-        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
-
-        const highlightLink = (links) => {
-            let currentSection = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-
-            links.forEach(link => {
-                link.classList.remove('active-link');
-                if (link.getAttribute('href').substring(1) === currentSection) {
-                    link.classList.add('active-link');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', () => {
-            highlightLink(navLinks);
-            highlightLink(mobileNavLinks);
-        });
-
-    </script>
-
-</body>
+  </body>
 </html>
